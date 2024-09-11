@@ -59,19 +59,26 @@ The objective of this assignment is to introduce you to the cost management and 
 ## Objective
 The objective of this assignment is to provide hands-on experience with managing Virtual Machines (VMs) in both Azure and Google Cloud Platform (GCP). You will learn how to start, stop, and monitor the costs associated with running VMs on these cloud platforms.
 
+## IMPORTANT NOTE FOR AZURE: 
+You MAY not have permissions to start a VM within Azure because of a change either by Microsoft or Stony Brook. If you do not have permissions, or our unable to, that is fine. Please then just continue with the assignment with GCP. 
+
 ## Instructions
 
 ### 1. Start and Stop a Virtual Machine
-- **Azure:**
-  - Navigate to the Azure portal and create a new Virtual Machine.
-  - Choose a basic configuration (e.g., Ubuntu Server, Standard B1s size).
-  - Start the VM and allow it to run for a few minutes.
-  - Stop the VM and take note of the actions you took.
 - **GCP:**
   - Access the Google Cloud Console and create a new VM instance using Compute Engine.
   - Select a basic configuration (e.g., Debian GNU/Linux, e2-micro instance type).
   - Start the VM and let it run for a few minutes.
   - Stop the VM and document the steps you followed.
+- **Azure:**
+  - Navigate to the Azure portal and create a new Virtual Machine.
+  - Choose a basic configuration (e.g., Ubuntu Server, Standard B1s size).
+  - Start the VM and allow it to run for a few minutes.
+  - Stop the VM and take note of the actions you took.
+
+IMPORTANT Notes:
+- **Remember to stop the VMs after a few minutes to avoid incurring unnecessary costs.**
+
 
 ### 2. Monitor VM Costs
 - **Azure:**
