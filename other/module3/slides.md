@@ -312,35 +312,55 @@ Hants Williams, PhD, RN
 
 ---
 
-- **Creating new users**:  
-  - Use the `sudo adduser` command to create new users on your VM instance.
-  - As a example, `sudo adduser newusername`.
-    - Example: `sudo adduser hants`.
-  - (If you want) Then give the new user sudo privileges with `sudo usermod -aG sudo newuser`.
-    - Example: `sudo usermod -aG sudo hants`.
+# What is SSH?
+- Secure Shell (SSH) is a cryptographic network protocol for secure data communication, remote command-line login, remote command execution, and other secure network services between two networked computers.
+- SSH is typically used to log into a remote machine and execute commands
+- SSH uses public-key cryptography to authenticate the remote computer and allow it to authenticate the user if necessary.
+
 
 ---
 
-  - Enable login with password: 
-    - Allow password authentication in `/etc/ssh/sshd_config` file.
-        - Example: `sudo nano /etc/ssh/sshd_config` 
-    - Modify: 
-        ```bash
-        PasswordAuthentication yes
-        PermitRootLogin no
-        ```
-    - Save and exit the file.
-    - Then restart the ssh service: `sudo systemctl restart sshd`.
+# **Connecting with Traditional SSH**
+- 1. Need to create a new key pair (public, private) on your machine with a specific user name. 
+- 2. Need to copy the public key to the VM instance(s) you want to connect to.
+- 3. Then you need to create a new user on the VM instance(s) you want to connect to that matches the user name you created within the key pair.
+- 4. Then you can connect to the VM instance(s) with the private key.
 
 ---
 
-- Then connecting with ssh in some type of terminal:
-    - First make sure that ssh is installed on your machine.
+## What is a SSH key pair?
+- SSH keys are a pair of cryptographic keys used to authenticate users and secure connections to remote servers.
+- The key pair consists of a public key and a private key.
+- The public key is shared with the server, while the private key is kept secret and used to authenticate the user.
+
+---
+- **1. Create Local Key Pair:**
+    - On your local machine, generate a new key pair with a specific user name (https://cloud.google.com/compute/docs/connect/create-ssh-keys):
+        - `ssh-keygen -t rsa -f ~/.ssh/hants_gcp -C hants`
+        - `pbcopy < hants_gcp.pub`
+
+---
+- **2. Copy Public Key to VM Instance:**
+    - Copy the public key on your local machine
+    - Go into the meta details section under VM, and add the public key to the VM instance(s)
+        - https://console.cloud.google.com/compute/metadata?
+        - So it is under compute --> metadata
+        - Then there is a SSH keys section
+---
+
+![ssh_keys](gcp_metadata_keys.png)
+
+---
+- **3. Create a new user on the VM instance:**
+    - Actions to take on the VM instance, signing in with the google console SSH button:
+        - `sudo adduser hants`
+        - `sudo usermod -aG sudo hants`
+- **4. Connect to the VM instance with the private key:**
+    - On your local machine, connect to the VM instance with the private key
+    - First need to make sure that you have SSH installed on your machine.
         - Example: `ssh -V`
-          - If you are on a mac, it should be installed by default.
-          - If you are on a pc, use Windows Powershell or Windows Linux Subsystem.
-    - `ssh newusername@ipaddress`
-    - Example: `ssh hants@XXX.XXX.XX` 
+    - Once you have SSH installed, you can connect to the VM instance:
+        - `ssh -i ~/.ssh/hants_gcp hants@XXX.XX.XX.X `
 
 ---
 
@@ -359,3 +379,40 @@ Hants Williams, PhD, RN
 - Share the VM with other users.
 
 --- 
+
+# Additional - Connecting with Tailscale
+
+- **What is Tailscale?**
+    - Tailscale is a zero-config VPN that connects your devices to your network.
+    - It creates a secure, encrypted mesh network that allows you to access your devices from anywhere.
+    - Tailscale is easy to set up and use, making it an ideal solution for remote work, team collaboration, and personal use.
+
+---
+
+# **Connecting with Tailscale**
+- 1. Sign up for a Tailscale account and install the Tailscale client on your local machine and VM instance(s).
+- 2. Log in to your Tailscale account and create a new network.
+- 3. Add your local machine and VM instance(s) to the network.
+- 4. Connect to your VM instance(s) using the Tailscale IP address.
+
+---
+
+# **Connecting with Tailscale**
+- **1. Sign up for a Tailscale account:**
+    - Go to https://tailscale.com/ and sign up for a Tailscale account.
+    - Download and install the Tailscale client on your local machine first 
+    - Then install the Tailscale client on your VM instance(s).
+        - E.g., click on linux, and then copy the command to install the client on the VM instance(s).
+            - `curl -fsSL https://tailscale.com/install.sh | sh`
+
+---
+# **Connecting with Tailscale Continued...**
+- Then you will need to authenticate: 
+    - `sudo tailscale up` 
+        - which will give you a link to authenticate the VM instance(s) with your Tailscale account using your browser. So you will need to copy the link and paste it into your browser on your local machine.
+- Then after it has installed on the remote VM, you will need to enable the SSH key for the VM instance(s) by using: 
+    - `sudo tailscale set --ssh`
+    - Then you can connect to the VM instance(s) with the Tailscale IP address using the `root` user.
+        - `ssh root@{tailscale_ip}`
+---
+    
