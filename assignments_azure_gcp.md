@@ -108,12 +108,14 @@ IMPORTANT Notes:
 
 # Assignment: Networking in Azure and GCP - IPs and Domain Management
 
-## Objective
-The objective of this assignment is to explore the networking features in Azure and Google Cloud Platform (GCP), focusing on Virtual Private Cloud (VPC), Virtual Private Network (VPN), IP addresses, and domain management. You will gain practical experience in assigning dedicated IPs and mapping them to domains.
+## NEW VERSION OF ASSIGNMENT
 
-## Instructions
+### Objective
+The objective of this assignment is to explore the networking features in Azure and Google Cloud Platform (GCP), focusing on Virtual Private Cloud (VPC), IP addresses, domain management, and mapping a Flask web application to a custom domain. You will gain practical experience in reserving either static or dynamic IPs, mapping them to domains, and configuring firewall settings for public access.
 
-### 1. Create a Virtual Private Cloud (VPC)
+### Instructions
+
+#### 1. Create a Virtual Private Cloud (VPC)
 - **Azure:**
   - Navigate to the Azure portal and create a new Virtual Network (VNet).
   - Choose a simple IP address range and subnet configuration.
@@ -121,33 +123,88 @@ The objective of this assignment is to explore the networking features in Azure 
   - Access the Google Cloud Console and create a new VPC network.
   - Configure the IP address range and subnets similarly to your Azure setup.
 
-### 2. Assign a Dedicated IP
+#### 2. Assign a Dedicated or Dynamic IP
+- **Azure:**
+  - You may either reserve a static public IP address for a resource (e.g., a virtual machine) within your VNet or use the dynamic public IP assigned by Azure.
+- **GCP:**
+  - Reserve a static external IP address for a Compute Engine instance within your VPC or use the dynamically assigned public IP.
+
+#### 3. Map IP to a Domain Acquired via GitHub Student Pack
+- Use your GitHub Student Developer Pack to acquire a domain through Namecheap (or another supported registrar).
+- Configure the DNS settings to map either the reserved static IP or dynamic IP (assigned to your VM) to your domain.
+- Set up an **A record** for your main domain (e.g., `yourdomain.com`) and a **subdomain** (e.g., `app.yourdomain.com`).
+
+#### 4. Deploy Flask Application
+- Deploy the provided Flask application located at [HHA 504 Flask Networking](https://github.com/hantswilliams/hha-504-flask-networking) to your virtual machine on Azure or GCP.
+- Ensure that the Flask application is running on a specific port (e.g., port 5007).
+
+#### 5. Configure Firewall Settings
+- Make sure that the port on which your Flask application is running is accessible to the general public.
+  - **Azure:** Configure Network Security Group (NSG) rules to allow inbound traffic on the specified port.
+  - **GCP:** Configure Firewall rules to allow traffic on the specified port.
+
+#### 6. Access Your Application via Domain
+- Visit your deployed Flask application using the custom domain or subdomain you mapped, including the port number in the URL (e.g., `http://app.yourdomain.com:5000`).
+  
+#### 7. Submit Your Work
+- Create a Markdown document that includes:
+  - Screenshots of the VPC/VNet creation and IP reservation process in both Azure and GCP.
+  - Screenshots and documentation of the steps taken to map the IP address to the domain (including the creation of A records and subdomains).
+  - Screenshots of the running Flask application accessible via your domain or subdomain.
+  - Documentation on how you configured the firewall rules to allow access to the Flask app.
+- Errors 
+  - As usual, if you run into errors, document them and how you attempted to resolve them.
+  - It is ok if you are unable to resolve the errors, document what you tried and what you think the error might be.
+
+- Commit and push this Markdown document, along with the screenshots, to your GitHub repository.
+
+### Deliverables
+- A Markdown document in a GitHub repository called `HHA504_assignment_networking` that includes:
+  - Screenshots of VPC/VNet creation and IP reservation.
+  - Steps and screenshots for mapping IPs to domains and configuring subdomains.
+  - Screenshots of the Flask app running and accessible via the mapped domain or subdomain.
+  - Firewall rule configurations that allow public access to the Flask application.
+
+## OLDER VERSION OF ASSIGNMENT (you can use this one if you prefer, ok if you have already submitted)
+### Objective
+The objective of this assignment is to explore the networking features in Azure and Google Cloud Platform (GCP), focusing on Virtual Private Cloud (VPC), Virtual Private Network (VPN), IP addresses, and domain management. You will gain practical experience in assigning dedicated IPs and mapping them to domains.
+
+### Instructions
+
+#### 1. Create a Virtual Private Cloud (VPC)
+- **Azure:**
+  - Navigate to the Azure portal and create a new Virtual Network (VNet).
+  - Choose a simple IP address range and subnet configuration.
+- **GCP:**
+  - Access the Google Cloud Console and create a new VPC network.
+  - Configure the IP address range and subnets similarly to your Azure setup.
+
+#### 2. Assign a Dedicated IP
 - **Azure:**
   - Reserve a static public IP address for a resource (e.g., a virtual machine) within your VNet.
 - **GCP:**
   - Reserve a static external IP address for a Compute Engine instance within your VPC.
 
-### 3. Map IP to a Domain
+#### 3. Map IP to a Domain
 - **Azure:**
   - Use Azure DNS or an external domain registrar to map the reserved IP address to a domain name.
 - **GCP:**
   - Use Google Cloud DNS or an external domain registrar to map the reserved IP address to a domain name.
 
-### 4. Explore VPN and Tunnels (Optional)
+#### 4. Explore VPN and Tunnels (Optional)
 - **Azure:**
   - Explore the VPN Gateway service and document the steps you would take to set up a site-to-site VPN.
 - **GCP:**
   - Explore the Cloud VPN service and outline the process to create a tunnel between two VPCs.
 
-### 5. Submit Your Work
+#### 5. Submit Your Work
 - Create a Markdown document that includes:
   - Screenshots of the VPC/VNet creation and IP reservation process in both Azure and GCP.
   - Documentation of the steps taken to map the IP address to a domain in both platforms.
   - (Optional) Brief notes on VPN setup in Azure and GCP.
 - Commit and push this Markdown document, along with the screenshots, to your GitHub repository.
 
-## Deliverables
-- September 22 2024: 11:59pm EST
+### Deliverables
 - A Markdown document in a GitHub repository called `HHA504_assignment_networking` that includes:
   - Screenshots of VPC/VNet creation and IP reservation.
   - Steps and screenshots for mapping IPs to domains.
@@ -186,7 +243,6 @@ The objective of this assignment is to introduce you to serverless computing and
 - Commit and push this Markdown document, along with the screenshots and code, to your GitHub repository.
 
 ## Deliverables
-- September 29 2024: 11:59pm EST
 - A Markdown document in a GitHub repository called `HHA504_assignment_functions` that includes:
   - Screenshots of the serverless function deployments.
   - Code and configuration for the GitHub cron job.
@@ -230,7 +286,6 @@ The objective of this assignment is to familiarize you with cloud storage servic
 - Commit and push this Markdown document, along with the screenshots and code, to your GitHub repository.
 
 ## Deliverables
-- October 6 2024: 11:59pm EST
 - A Markdown document in a GitHub repository called `HHA504_assignment_storage` that includes:
   - Screenshots of file uploads via GUI in Azure and GCP.
   - Python code for uploading files to Azure Blob Storage and GCP Cloud Storage.
@@ -276,7 +331,6 @@ The objective of this assignment is to introduce you to managed database service
 - Commit and push this Markdown document, along with the screenshots and query results, to your GitHub repository.
 
 ## Deliverables
-- October 13 2024: 11:59pm EST
 - A Markdown document in a GitHub repository called `HHA504_assignment_dbs` that includes:
   - Screenshots of managed database creation and monitoring in Azure and GCP.
   - BigQuery dataset creation and query results.
@@ -319,7 +373,6 @@ The objective of this assignment is to help you gain hands-on experience in conn
 - Commit and push this Markdown document, along with the Python code and screenshots, to your GitHub repository.
 
 ## Deliverables
-- October 20 2024: 11:59pm EST
 - A Markdown document in a GitHub repository called `HHA504_assignment_sqlalchemy` that includes:
   - Documentation of MySQL deployment.
   - Python code for connecting and interacting with the MySQL database using SQLAlchemy.
@@ -361,7 +414,6 @@ The objective of this assignment is to introduce you to the use of pre-trained m
 - Commit and push this Markdown document, along with any relevant notebooks or code, to your GitHub repository.
 
 ## Deliverables
-- October 27 2024: 11:59pm EST
 - A Markdown document in a GitHub repository called `HHA504_assignment_ai` that includes:
   - Screenshots/outputs from pre-trained model interactions (speech and vision) in GCP and Azure.
   - A comparison and reflection on the results from both platforms.
@@ -403,7 +455,6 @@ The objective of this assignment is to provide you with hands-on experience in d
 - Commit and push this Markdown document, along with your Dockerfile and any other relevant code, to your GitHub repository.
 
 ## Deliverables
-- November 3 2024: 11:59pm EST
 - A Markdown document in a GitHub repository called `HHA504_assignment_containers` that includes:
   - The Dockerfile for your containerized application.
   - Screenshots of the deployments on GCP Cloud Run and Azure Container Apps.
