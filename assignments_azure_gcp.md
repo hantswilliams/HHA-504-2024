@@ -131,7 +131,6 @@ The objective of this assignment is to explore the networking features in Azure 
 
 #### 3. Map IP to a Domain Acquired via GitHub Student Pack
 - Use your GitHub Student Developer Pack to acquire a domain through Namecheap (or another supported registrar).
-- Configure the DNS settings to map either the reserved static IP or dynamic IP (assigned to your VM) to your domain.
 - Set up an **A record** for your main domain (e.g., `yourdomain.com`) and a **subdomain** (e.g., `app.yourdomain.com`).
 
 #### 4. Deploy Flask Application
