@@ -22,6 +22,8 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run PubMed Retrieval Script
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
         run: python other/module5/pubmed_github_action.py # run data pipeline
 
      
