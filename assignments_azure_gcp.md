@@ -266,6 +266,11 @@ The objective of this assignment is to familiarize you with cloud storage servic
   - Upload a similar sample file to the bucket using the GCP Console.
 
 ### 2. Upload Files Using Python
+- For this section, if you want to make it more realistic, I recommend finding some open source open source x-ray images and uploading them to the cloud storage. This though is not a requirement, just a suggestion. Potential sites where you can find medical images: 
+  - [Stanford - Center for Ai and Machine Learning](https://aimi.stanford.edu/shared-datasets)
+  - [Kaggle - Xray COVID images](https://www.kaggle.com/datasets/andyczhao/covidx-cxr2)
+  - [NLM - Open Access Biomedical images search engine](https://openi.nlm.nih.gov/)
+  - [Cancer - Imaging Archive](https://www.cancerimagingarchive.net/browse-collections/)
 - **Azure Blob Storage:**
   - Write a Python script that uploads a file to the Blob container you created. Use the `azure-storage-blob` library to handle the upload.
 - **GCP Cloud Storage:**
