@@ -264,6 +264,7 @@ The objective of this assignment is to familiarize you with cloud storage servic
 - **GCP Cloud Storage:**
   - Access the Google Cloud Console and create a new Cloud Storage bucket.
   - Upload a similar sample file to the bucket using the GCP Console.
+  - Example repo of what we did during class: ['Class Repo'](https://github.com/hantswilliams/gcp-cloud-storage-demo)
 
 ### 2. Upload Files Using Python
 - For this section, if you want to make it more realistic, I recommend finding some open source open source x-ray images and uploading them to the cloud storage. This though is not a requirement, just a suggestion. Potential sites where you can find medical images: 
