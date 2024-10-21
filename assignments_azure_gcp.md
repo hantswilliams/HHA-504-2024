@@ -297,49 +297,56 @@ The objective of this assignment is to familiarize you with cloud storage servic
   - Notes on storage management and security features in Azure and GCP.
 
 
-# Assignment: Working with Managed Databases in Azure and GCP
+# Assignment: Working with Managed No-SQL Databases 
 
 ## Objective
 The objective of this assignment is to introduce you to managed database services in Azure and Google Cloud Platform (GCP). You will learn how to start, stop, and monitor database-related services, including BigQuery and MySQL.
 
 ## Instructions
 
-### 1. Start and Configure a Managed Database
-- **Azure MySQL:**
-  - Navigate to the Azure portal and create an Azure Database for MySQL.
-  - Configure the database with basic settings (e.g., compute and storage options).
-  - Start the database service and note the connection details.
-- **GCP MySQL:**
-  - Access the Google Cloud Console and create a Cloud SQL instance with MySQL.
-  - Configure the database instance similarly, noting any differences in setup between Azure and GCP.
-  - Start the database service and document the connection details.
+### 1. Start and Configure Databases
+- **Google BigQuery (GCP):**
+  - Navigate to BigQuery in the Google Cloud Console.
+  - Use your student account project to create a new dataset in BigQuery.
+  - Load a simple data asset (e.g., a small CSV file or a few new fields) into a table within your dataset.
+  - Note the connection details and the query editor interface.
+
+- **MongoDB Atlas (Cloud):**
+  - Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and register for the free tier using your Stony Brook email.
+  - Create a new database instance and configure it with basic settings.
+  - Create a simple collection with a few documents (e.g., a JSON file or manually entered fields).
+  - Document the steps and connection details.
+
+- **Redis Cloud:**
+  - Go to [Redis Cloud](https://redis.com/redis-enterprise/cloud/) and sign up for a free tier account using your Stony Brook email.
+  - Set up a new Redis database instance.
+  - Add some data to your Redis instance (e.g., a few key-value pairs).
+  - Document the process and connection details.
 
 ### 2. Explore BigQuery (GCP)
 - **BigQuery:**
-  - In GCP, navigate to BigQuery and create a dataset.
-  - Load a small sample data file into a table within the dataset (e.g., a CSV file).
-  - Run a simple query against the dataset to retrieve specific data.
+  - In the Google Cloud Console, run a simple query against the dataset you created in BigQuery to retrieve specific data.
   - Monitor the usage and cost associated with running the query.
 
-### 3. Monitor Database Services
-- **Azure:**
-  - Use the Azure portal to monitor the performance and cost of the MySQL database. Explore metrics like CPU usage, memory, and query performance.
-- **GCP:**
-  - Use the GCP Console to monitor the Cloud SQL instance and the BigQuery dataset. Pay attention to similar metrics and note any differences in monitoring tools between the two platforms.
+### 3. Describe Your Experience
+- For each of the three services (BigQuery, MongoDB Atlas, Redis Cloud), create a simple data asset (e.g., a small CSV file, new fields, or key-value pairs).
+- Document your experience creating and working with the data asset in each platform:
+  - Describe the setup process and any configuration steps.
+  - Share your reflections on the interface and usability of each platform.
 
 ### 4. Submit Your Work
 - Create a Markdown document that includes:
-  - Screenshots of the database creation and configuration process in both Azure and GCP.
+  - Screenshots of the database creation and configuration process in BigQuery, MongoDB Atlas, and Redis Cloud.
   - The SQL query run in BigQuery and the results.
-  - Documentation of the monitoring process for both Azure MySQL and GCP MySQL/BigQuery.
-  - Reflections on the differences between managing databases on Azure and GCP.
+  - Documentation of your experience and reflections on working with each platform (BigQuery, MongoDB, Redis).
+  
 - Commit and push this Markdown document, along with the screenshots and query results, to your GitHub repository.
 
 ## Deliverables
 - A Markdown document in a GitHub repository called `HHA504_assignment_dbs` that includes:
-  - Screenshots of managed database creation and monitoring in Azure and GCP.
+  - Screenshots of database creation and configuration for BigQuery, MongoDB Atlas, and Redis Cloud.
   - BigQuery dataset creation and query results.
-  - Reflections on database management across Azure and GCP.
+  - Reflections on working with each of the three platforms.
 
 
 # Assignment: Connecting to SQL Databases with SQLAlchemy in Python
