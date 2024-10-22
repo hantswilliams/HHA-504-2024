@@ -304,6 +304,8 @@ The objective of this assignment is to introduce you to managed database service
 
 ## Fake dataset to use: 
 
+- data set url: [https://raw.githubusercontent.com/hantswilliams/HHA-504-2024/refs/heads/main/other/module8/module8_nosql_hw.csv](https://raw.githubusercontent.com/hantswilliams/HHA-504-2024/refs/heads/main/other/module8/module8_nosql_hw.csv)
+
 ```csv
 PatientID,Name,Age,Gender,DiagnosisCode,VisitDate,Hospital,TreatmentPlan,FollowUpDate
 1,John Doe,45,M,M54.5,2024-09-10,Stony Brook Hospital,Physical Therapy,2024-09-20
@@ -313,6 +315,17 @@ PatientID,Name,Age,Gender,DiagnosisCode,VisitDate,Hospital,TreatmentPlan,FollowU
 5,Michael Brown,37,M,G43.909,2024-06-12,Stony Brook Hospital,Triptans,
 6,Susan Davis,54,F,I25.10,2024-05-10,Stony Brook Hospital,Statins,2024-06-10
 ```
+
+- Dataset Explanation
+  - *PatientID*: Unique identifier for each patient (integer).
+  - *Name*: Patient's full name (string).
+  - *Age*: Age of the patient (integer).
+  - *Gender*: Gender of the patient (string: M or F).
+  - *DiagnosisCode*: ICD-10 code representing the patient’s diagnosis (string).
+  - *VisitDate*: Date of the hospital visit (YYYY-MM-DD format).
+  - *Hospital*: Name of the hospital or clinic where the visit took place (string).
+  - *TreatmentPlan*: The prescribed treatment plan for the patient (string).
+  - *FollowUpDate*: Date for a follow-up visit, if applicable (YYYY-MM-DD format).
 
 ## Instructions
 
@@ -328,27 +341,78 @@ PatientID,Name,Age,Gender,DiagnosisCode,VisitDate,Hospital,TreatmentPlan,FollowU
   - Create a new database instance and configure it with basic settings.
   - Insert the provided healthcare dataset into a collection, ensuring each row is converted to a JSON document.
   - Document the steps and connection details.
+  - **Hints**:
+    - Each row in the CSV file corresponds to a document in MongoDB.
+    - You’ll need to convert the CSV into JSON format, which could look like this for one patient:
+      ```json
+      {
+        "PatientID": 1,
+        "Name": "John Doe",
+        "Age": 45,
+        "Gender": "M",
+        "DiagnosisCode": "M54.5",
+        "VisitDate": "2024-09-10",
+        "Hospital": "Stony Brook Hospital",
+        "TreatmentPlan": "Physical Therapy",
+        "FollowUpDate": "2024-09-20"
+      }
+      ```
+    - You can use python to help convert it into json-like format: 
+      - Example:
+        ```python
+        # Convert the DataFrame to a list of dictionaries (JSON-like)
+        data = df.to_dict(orient='records')
+        ```
+      - Then using the `pymongo` library to insert the data into MongoDB.
+        ```python
+        # Insert the data into the MongoDB collection
+        collection.insert_many(data)
+        ```
 
 - **Redis Cloud:**
   - Go to [Redis Cloud](https://redis.io/cloud/) and sign up for a free tier account using your Stony Brook email.
   - Set up a new Redis database instance.
   - Use `PatientID` as the key and the rest of the patient data as the value (either as a serialized JSON string or separate fields).
   - Document the process and connection details.
+  - **Hints**:
+    - Redis is a key-value store, so you'll need to treat the `PatientID` as the unique key, with the patient data being the value.
+    - Example in python, using the `redis` library: 
+      ```python
+
+      df = pd.read_csv('file.csv')
+
+      # Connect to Redis
+      r = redis.StrictRedis(
+          host='your_redis_host',
+          port='your_redis_port',
+          password='your_redis_password',
+          decode_responses=True
+      )
+
+      for _, row in df.iterrows():
+          patient_data = row.to_dict()
+          r.set(patient_data['PatientID'], json.dumps(patient_data))
+        ```
 
 ### 2. Explore BigQuery (GCP)
 - **BigQuery:**
-  - In the Google Cloud Console, run a simple SQL query against the dataset you uploaded (e.g., filter by `DiagnosisCode` or calculate the average `Age` of patients).
+  - In the Google Cloud Console, run a simple SQL query against the dataset you uploaded:
+      ```sql
+      SELECT * FROM `your_project_id.your_dataset_id.your_table_id` WHERE Age > 40
+      ```
   - Monitor the usage and cost associated with running the query.
 
 
 ### 3. Modify and Explore the Data in MongoDB Atlas and Redis Cloud
 - **MongoDB Atlas**:
-  - Explore and modify the data stored in MongoDB by updating or adding a new document in your collection.
+  - Insert the dataset into MongoDB Atlas, converting each row into a JSON-like document.
+  - Ensure fields like PatientID and VisitDate are treated appropriately (i.e., unique identifiers and date types).
   - Run a simple query to retrieve patient data based on a condition (e.g., `Age > 40`).
 
 - **Redis Cloud**:
-  - Retrieve and modify key-value pairs in your Redis instance. 
+  - Insert key-value pairs where the PatientID is the key, and the rest of the patient data is the value.  
   - For example, retrieve the data for `PatientID=1`, then update the `TreatmentPlan` value.
+  - Explore Redis's capabilities to update and query the dataset, e.g., retrieving all data for `PatientID`=1.
 
 
 ### 4. Describe Your Experience
@@ -365,7 +429,7 @@ PatientID,Name,Age,Gender,DiagnosisCode,VisitDate,Hospital,TreatmentPlan,FollowU
 - Commit and push this Markdown document, along with the screenshots and query results, to your GitHub repository.
 
 ## Deliverables
-- A Markdown document in a GitHub repository called `HHA504_assignment_dbs` that includes:
+- A Markdown document in a GitHub repository called `HHA504_assignment_nosql_dbs` that includes:
   - Screenshots of database creation and configuration for BigQuery, MongoDB Atlas, and Redis Cloud.
   - BigQuery dataset creation and query results.
   - Reflections on working with each of the three platforms.
