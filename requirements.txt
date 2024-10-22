@@ -2,3 +2,4 @@ pandas
 requests
 resend
 python-dotenv
+pymongo[srv]
