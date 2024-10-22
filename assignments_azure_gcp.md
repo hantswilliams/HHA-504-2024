@@ -302,43 +302,65 @@ The objective of this assignment is to familiarize you with cloud storage servic
 ## Objective
 The objective of this assignment is to introduce you to managed database services in Azure and Google Cloud Platform (GCP). You will learn how to start, stop, and monitor database-related services, including BigQuery and MySQL.
 
+## Fake dataset to use: 
+
+```csv
+PatientID,Name,Age,Gender,DiagnosisCode,VisitDate,Hospital,TreatmentPlan,FollowUpDate
+1,John Doe,45,M,M54.5,2024-09-10,Stony Brook Hospital,Physical Therapy,2024-09-20
+2,Jane Smith,29,F,E11.9,2024-08-15,Stony Brook Hospital,Insulin,2024-09-15
+3,Bob Johnson,65,M,I10,2024-10-01,Long Island Clinic,Hypertension Medication,2024-11-01
+4,Alice Williams,50,F,J45.909,2024-07-22,Southampton Hospital,Bronchodilators,2024-08-22
+5,Michael Brown,37,M,G43.909,2024-06-12,Stony Brook Hospital,Triptans,
+6,Susan Davis,54,F,I25.10,2024-05-10,Stony Brook Hospital,Statins,2024-06-10
+```
+
 ## Instructions
 
 ### 1. Start and Configure Databases
 - **Google BigQuery (GCP):**
   - Navigate to BigQuery in the Google Cloud Console.
   - Use your student account project to create a new dataset in BigQuery.
-  - Load a simple data asset (e.g., a small CSV file or a few new fields) into a table within your dataset.
+  - Upload the provided healthcare dataset (CSV) into a table within your dataset.
   - Note the connection details and the query editor interface.
 
 - **MongoDB Atlas (Cloud):**
   - Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and register for the free tier using your Stony Brook email.
   - Create a new database instance and configure it with basic settings.
-  - Create a simple collection with a few documents (e.g., a JSON file or manually entered fields).
+  - Insert the provided healthcare dataset into a collection, ensuring each row is converted to a JSON document.
   - Document the steps and connection details.
 
 - **Redis Cloud:**
-  - Go to [Redis Cloud](https://redis.com/redis-enterprise/cloud/) and sign up for a free tier account using your Stony Brook email.
+  - Go to [Redis Cloud](https://redis.io/cloud/) and sign up for a free tier account using your Stony Brook email.
   - Set up a new Redis database instance.
-  - Add some data to your Redis instance (e.g., a few key-value pairs).
+  - Use `PatientID` as the key and the rest of the patient data as the value (either as a serialized JSON string or separate fields).
   - Document the process and connection details.
 
 ### 2. Explore BigQuery (GCP)
 - **BigQuery:**
-  - In the Google Cloud Console, run a simple query against the dataset you created in BigQuery to retrieve specific data.
+  - In the Google Cloud Console, run a simple SQL query against the dataset you uploaded (e.g., filter by `DiagnosisCode` or calculate the average `Age` of patients).
   - Monitor the usage and cost associated with running the query.
 
-### 3. Describe Your Experience
-- For each of the three services (BigQuery, MongoDB Atlas, Redis Cloud), create a simple data asset (e.g., a small CSV file, new fields, or key-value pairs).
-- Document your experience creating and working with the data asset in each platform:
+
+### 3. Modify and Explore the Data in MongoDB Atlas and Redis Cloud
+- **MongoDB Atlas**:
+  - Explore and modify the data stored in MongoDB by updating or adding a new document in your collection.
+  - Run a simple query to retrieve patient data based on a condition (e.g., `Age > 40`).
+
+- **Redis Cloud**:
+  - Retrieve and modify key-value pairs in your Redis instance. 
+  - For example, retrieve the data for `PatientID=1`, then update the `TreatmentPlan` value.
+
+
+### 4. Describe Your Experience
+- For each of the three services (BigQuery, MongoDB Atlas, Redis Cloud), document your experience creating and working with the healthcare dataset:
   - Describe the setup process and any configuration steps.
   - Share your reflections on the interface and usability of each platform.
 
-### 4. Submit Your Work
+### 5. Submit Your Work
 - Create a Markdown document that includes:
   - Screenshots of the database creation and configuration process in BigQuery, MongoDB Atlas, and Redis Cloud.
   - The SQL query run in BigQuery and the results.
-  - Documentation of your experience and reflections on working with each platform (BigQuery, MongoDB, Redis).
+  - Documentation of your experience and reflections on working with each platform (BigQuery, MongoDB Atlas, Redis Cloud).
   
 - Commit and push this Markdown document, along with the screenshots and query results, to your GitHub repository.
 
