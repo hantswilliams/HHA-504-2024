@@ -521,7 +521,7 @@ The objective of this assignment is to introduce you to the use of pre-trained m
 # Assignment: Deploying and Managing Containers with GCP Cloud Run and Azure Container Apps
 
 ## Objective
-The objective of this assignment is to provide you with hands-on experience in deploying and managing containers using GCP Cloud Run and Azure Container Apps. You will learn how to containerize an application with Docker and deploy it on both platforms.
+The objective of this assignment is to provide you with hands-on experience in deploying and managing containers using either GCP Cloud Run and Azure Container Apps. You will learn how to containerize an application with Docker and deploy it on both platforms.
 
 ## Instructions
 
@@ -532,14 +532,14 @@ The objective of this assignment is to provide you with hands-on experience in d
 
 ### 2. Deploy to GCP Cloud Run
 - **GCP Cloud Run:**
-  - Push your Docker image to Google Container Registry (GCR).
+  - Push your Docker image to DockerHub
   - Deploy the containerized application to GCP Cloud Run.
   - Configure the deployment, including setting environment variables and scaling options.
   - Test the deployed application to ensure it is running correctly.
 
-### 3. Deploy to Azure Container Apps
+### 3. Deploy to Azure Container Apps (OPTIONAL)
 - **Azure Container Apps:**
-  - Push your Docker image to Azure Container Registry (ACR).
+  - Push your Docker image to DockerHub.
   - Deploy the containerized application to Azure Container Apps.
   - Configure the deployment similarly to the GCP deployment, including environment variables and scaling options.
   - Test the deployed application to ensure it is running as expected.
