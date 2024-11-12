@@ -1,3 +1,12 @@
+# Make sure you first have a Docker Hub account with a empty repository created
+- https://hub.docker.com/
+- https://hub.docker.com/repository/create
+- You will then use this repository to push your Docker image to
+
+# Login to Docker Hub
+- command structure: docker login -u {username}
+    - `docker login -u {hants}`
+
 # Build
 - command structure: docker build --platform linux/amd64 -t {name}:{version} .
     - `docker build --platform linux/amd64 -t 504flask:v1 .`
