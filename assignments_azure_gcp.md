@@ -528,6 +528,10 @@ The objective of this assignment is to provide you with hands-on experience in d
 ### 1. Containerize a Simple Application
 - **Create a Docker Image:**
   - Choose a simple application (e.g., a Python Flask app) and create a Dockerfile to containerize the application.
+    - You can use the Flask app from module10 as a starting point.
+    - Please update it or customize it to make it your own. Try to spend about 30 minutes doing updates to the app. Some ideas:
+      - Add a new route that returns a different message, or random number
+      - Insert some HTML into the return message, etc...
   - Build the Docker image locally and test it to ensure that it runs as expected.
 
 ### 2. Deploy to GCP Cloud Run
