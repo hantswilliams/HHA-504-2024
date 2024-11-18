@@ -563,4 +563,64 @@ The objective of this assignment is to provide you with hands-on experience in d
   - Links to the deployed applications.
   - Reflections on the deployment process and any challenges faced.
 
+# Optional Assignment: End-to-End Cloud Project (GCP)
+
+## Overview
+
+This optional assignment challenges you to combine multiple cloud technologies discussed in class to create a full end-to-end project. By completing this project, you will strengthen your understanding of how various components interact in a real-world cloud application.
+
+---
+
+## Instructions
+
+1. **Create a GitHub Repository**
+   - Create a new GitHub repository named `504-e2e-project`.
+   - Add a README.md file to document your project.
+
+2. **Set Up a Basic Flask Application**
+   - Create a simple Flask application to serve as the core of your project.
+   - You may use a template provided in class or create your own from scratch.
+   - Ensure your application has at least one endpoint to display information retrieved from a database.
+
+3. **Create a Managed Database**
+   - Use **Google Cloud SQL** to create a managed database (PostgreSQL or MySQL).
+   - Populate the database with a dataset of your choice (e.g., ICD and HCPCS codes).
+   - Connect your Flask application to this database to fetch and display data.
+
+4. **Add a Serverless Function**
+   - Create a **Google Cloud Function** to perform a specific task related to your application.
+     - Example: Given a user query, the function could process and return a subset of relevant data.
+   - Integrate the function into your Flask application by calling it from one of the endpoints.
+
+5. **Use Cloud Blob Storage**
+   - Set up a **Google Cloud Storage** bucket to house static files for your application (e.g., images or other resources).
+   - Update your Flask application to fetch and display these static files dynamically.
+
+6. **Dockerize Your Application**
+   - Create a `Dockerfile` for your Flask application.
+   - Ensure the container includes all necessary dependencies to run your application.
+
+7. **Deploy to Cloud Run**
+   - Deploy your containerized Flask application to **Google Cloud Run**.
+   - Verify the application is accessible via the URL provided by Cloud Run.
+
+---
+
+## Submission Instructions
+
+1. Push all your code to your GitHub repository (`504-e2e-project`).
+2. Update the README.md in your repository to include:
+   - A brief description of your project.
+   - Steps to set up and run the application locally.
+   - URLs for your deployed application and any other relevant components (e.g., serverless function).
+3. Include screenshots of:
+   - The running application.
+   - Your database setup in Cloud SQL.
+   - Your deployed application in Cloud Run.
+4. Submit the link to your GitHub repository in Brightspace under the "Optional Assignment: End-to-End Project" section.
+
+---
+
+## Grading (Optional Assignment)
+This is an optional assignment and does not carry additional points. However, completing it will significantly enhance your understanding of the technologies and their integration.
 
