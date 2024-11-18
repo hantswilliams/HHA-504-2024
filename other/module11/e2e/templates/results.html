@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="bg-white shadow-md rounded p-6">
+    <h2 class="text-xl font-bold mb-4 text-gray-700">Search Results for "{{ query }}"</h2>
+    {% if results %}
+        <ul class="space-y-2">
+            {% for result in results %}
+                <li class="border p-4 rounded shadow-sm">
+                    <strong>{{ result.code }}</strong>: {{ result.description }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="text-red-500">No results found.</p>
+    {% endif %}
+    <a href="/" class="mt-4 inline-block bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Back to Search</a>
+</div>
+{% endblock %}

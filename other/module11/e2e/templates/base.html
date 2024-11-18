@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCPCS & ICD-10 Search</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center">
+    <header class="bg-blue-500 w-full text-white p-4 text-center">
+        <h1 class="text-2xl">HCPCS & ICD-10 Search</h1>
+    </header>
+    <main class="flex-grow w-full max-w-md p-4">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="bg-gray-800 text-white text-center p-2 w-full">
+        <p>&copy; 2024 HCPCS & ICD-10 Search App</p>
+    </footer>
+</body>
+</html>

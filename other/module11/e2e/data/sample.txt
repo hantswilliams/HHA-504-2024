@@ -1,0 +1,74 @@
+A000    Cholera due to Vibrio cholerae 01, biovar cholerae
+A001    Cholera due to Vibrio cholerae 01, biovar eltor
+A009    Cholera, unspecified
+A0100   Typhoid fever, unspecified
+A0101   Typhoid meningitis
+A0102   Typhoid fever with heart involvement
+A0103   Typhoid pneumonia
+A0104   Typhoid arthritis
+A0105   Typhoid osteomyelitis
+A0109   Typhoid fever with other complications
+A011    Paratyphoid fever A
+A012    Paratyphoid fever B
+A013    Paratyphoid fever C
+A014    Paratyphoid fever, unspecified
+A020    Salmonella enteritis
+A021    Salmonella sepsis
+A0220   Localized salmonella infection, unspecified
+A0221   Salmonella meningitis
+A0222   Salmonella pneumonia
+A0223   Salmonella arthritis
+A0224   Salmonella osteomyelitis
+A0225   Salmonella pyelonephritis
+A0229   Salmonella with other localized infection
+A028    Other specified salmonella infections
+A029    Salmonella infection, unspecified
+A030    Shigellosis due to Shigella dysenteriae
+A031    Shigellosis due to Shigella flexneri
+A032    Shigellosis due to Shigella boydii
+A033    Shigellosis due to Shigella sonnei
+A038    Other shigellosis
+A039    Shigellosis, unspecified
+A040    Enteropathogenic Escherichia coli infection
+A041    Enterotoxigenic Escherichia coli infection
+A042    Enteroinvasive Escherichia coli infection
+A043    Enterohemorrhagic Escherichia coli infection
+A044    Other intestinal Escherichia coli infections
+A045    Campylobacter enteritis
+A046    Enteritis due to Yersinia enterocolitica
+A0471   Enterocolitis due to Clostridium difficile, recurrent
+A0472   Enterocolitis due to Clostridium difficile, not specified as recurrent
+A048    Other specified bacterial intestinal infections
+A049    Bacterial intestinal infection, unspecified
+A050    Foodborne staphylococcal intoxication
+A051    Botulism food poisoning
+A052    Foodborne Clostridium perfringens [Clostridium welchii] intoxication
+A053    Foodborne Vibrio parahaemolyticus intoxication
+A054    Foodborne Bacillus cereus intoxication
+A055    Foodborne Vibrio vulnificus intoxication
+A058    Other specified bacterial foodborne intoxications
+A059    Bacterial foodborne intoxication, unspecified
+A060    Acute amebic dysentery
+A061    Chronic intestinal amebiasis
+A062    Amebic nondysenteric colitis
+A063    Ameboma of intestine
+A064    Amebic liver abscess
+A065    Amebic lung abscess
+A066    Amebic brain abscess
+A067    Cutaneous amebiasis
+A0681   Amebic cystitis
+A0682   Other amebic genitourinary infections
+A0689   Other amebic infections
+A069    Amebiasis, unspecified
+A070    Balantidiasis
+A071    Giardiasis [lambliasis]
+A072    Cryptosporidiosis
+A073    Isosporiasis
+A074    Cyclosporiasis
+A078    Other specified protozoal intestinal diseases
+A079    Protozoal intestinal disease, unspecified
+A080    Rotaviral enteritis
+A0811   Acute gastroenteropathy due to Norwalk agent
+A0819   Acute gastroenteropathy due to other small round viruses
+A082    Adenoviral enteritis
+A0831   Calicivirus enteritis

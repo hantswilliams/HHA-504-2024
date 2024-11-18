@@ -579,13 +579,14 @@ This optional assignment challenges you to combine multiple cloud technologies d
 
 2. **Set Up a Basic Flask Application**
    - Create a simple Flask application to serve as the core of your project.
-   - You may use a template provided in class or create your own from scratch.
+   - You may use a template provided in class or create your own from scratch. I would recommend that if you are not yet comfortable with Flask, use my example app that I have provided within module11/e2e as a starting point. 
    - Ensure your application has at least one endpoint to display information retrieved from a database.
 
 3. **Create a Managed Database**
    - Use **Google Cloud SQL** to create a managed database (PostgreSQL or MySQL).
    - Populate the database with a dataset of your choice (e.g., ICD and HCPCS codes).
    - Connect your Flask application to this database to fetch and display data.
+   - If using the example app, you could create a new script to push the data files loaded from the two text files into the database using SQLalchemy. 
 
 4. **Add a Serverless Function**
    - Create a **Google Cloud Function** to perform a specific task related to your application.
@@ -595,6 +596,7 @@ This optional assignment challenges you to combine multiple cloud technologies d
 5. **Use Cloud Blob Storage**
    - Set up a **Google Cloud Storage** bucket to house static files for your application (e.g., images or other resources).
    - Update your Flask application to fetch and display these static files dynamically.
+   - If using the example app, perhaps think about loading in some CMS logos or a Stony Brook logo that would be stored in the cloud blob storage. 
 
 6. **Dockerize Your Application**
    - Create a `Dockerfile` for your Flask application.
